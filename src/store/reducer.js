@@ -16,6 +16,12 @@ const cartReducer = (state= initialState, action)=>{
                 cart:[...state.cart, action.payload],
                 total: state.total + action.payload.price,
             };
+        case "REMOVE":
+            return {
+                ...state,
+                cart: state.cart.filter((i, index)=> index != action.payload.index),
+                total: state.total - action.payload.price,
+            };
             default:
                 return state;
     }
