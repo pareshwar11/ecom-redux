@@ -42,7 +42,7 @@ function App() {
       <h1>Cart</h1>
         {
           cart.map((item, index) => {
-            return <li key={index} onClick={() => deleteHandler(index, item.price)}>{item.name}</li>;
+            return <li key={index} >{item.name}  <span className='removebtn' onClick={() => deleteHandler(index, item.price)}>  REMOVE</span></li>;
           })
         }
       <hr />
